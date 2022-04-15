@@ -2,6 +2,9 @@ package main;
 
 import chap01print.PrintTest;
 import chap02var.VarTest;
+import chap03oper.OperTest;
+import chap04if.IfTest;
+import chap05loop.LoopTest;
 
 public class Main {
 
@@ -11,13 +14,27 @@ public class Main {
 //		pt.test();
 //		pt.test2();
 		
-		VarTest vt = new VarTest();
+//		VarTest vt = new VarTest();
 //		vt.test();
 //		vt.test2();
 //		vt.test3();
 //		vt.test4();
-		vt.test5();
+//		vt.test5();
 //		vt.test6();
+		
+//		OperTest ot = new OperTest();
+//		ot.test();
+//		ot.test2();
+//		ot.test3();
+//		ot.test4();
+		
+//		IfTest it = new IfTest();
+//		it.test();
+		
+		LoopTest lt = new LoopTest();
+//		lt.test();
+//		lt.test2();
+		lt.test3();
 
 	}
 

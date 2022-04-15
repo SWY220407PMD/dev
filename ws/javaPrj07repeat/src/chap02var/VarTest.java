@@ -62,11 +62,15 @@ public class VarTest {
 		//문자열 (==문자 배열)
 		String str = "심원용";
 		System.out.println(str);
+		
+		final double PI = 3.14;
+		System.out.println(PI);
+		
 	}
 	
 	//상수 (== 항상 같은 값을 가지는 수)
 	public void test7() {
-		final double pi = 3.14;
+		final double PI = 3.14; //pi == 상수 (final을 붙였으니까)
 		//3.14 를 이용해서 계산하는 프로그램 ~~~~~ (원의넓이 구하거나 머 그런거 ,,,,,)
 		
 //		pi = 3.41; //상수는 다시 값을 할당할 수 없음
