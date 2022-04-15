@@ -14,7 +14,10 @@ public class Main {
 		VarTest vt = new VarTest();
 //		vt.test();
 //		vt.test2();
-		vt.test3();
+//		vt.test3();
+//		vt.test4();
+		vt.test5();
+//		vt.test6();
 
 	}
 
