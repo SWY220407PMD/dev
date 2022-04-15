@@ -5,6 +5,7 @@ import chap02var.VarTest;
 import chap03oper.OperTest;
 import chap04if.IfTest;
 import chap05loop.LoopTest;
+import chap06array.ArrayTest;
 
 public class Main {
 
@@ -30,11 +31,17 @@ public class Main {
 		
 //		IfTest it = new IfTest();
 //		it.test();
+//		it.test2();
 		
-		LoopTest lt = new LoopTest();
+//		LoopTest lt = new LoopTest();
 //		lt.test();
 //		lt.test2();
-		lt.test3();
+//		lt.test3();
+		
+//		ArrayTest at = new ArrayTest();
+//		at.test();
+//		at.test2();
+//		at.test3();
 
 	}
 
