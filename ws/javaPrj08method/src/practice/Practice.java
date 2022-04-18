@@ -5,6 +5,9 @@ public class Practice {
 	public void test() {
 		System.out.println("practice start ~~~");
 //		printHelloWorld();
+//		System.out.println(getName());
+		//10, 20 을 이용해서 실행결과 출력해보고싶음 //plus 라는 메소드 이용해서
+//		System.out.println(plus(10,20));
 		System.out.println("practice end ~~~");
 	}
 	
@@ -21,7 +24,6 @@ public class Practice {
 		System.out.println("심원용");
 	}
 
-	
 	//메소드명 : multiple
 	//입력값 : 정수
 	//반환값 : 없음
@@ -30,7 +32,6 @@ public class Practice {
 		System.out.println(x * 2);
 	}
 	
-	
 	//메소드명 : getName
 	//입력값 : 없음
 	//반환값 : 본인이름 (심원용)
@@ -38,7 +39,6 @@ public class Practice {
 	public String getName() {
 		return "심원용";
 	}
-	
 	
 	//메소드명 : plus
 	//입력값 : 정수 2개
@@ -50,6 +50,15 @@ public class Practice {
 	
 	//위의 4개 메소드 작성 다 하면,
 	//call by value , call by ref 구경해보기
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
