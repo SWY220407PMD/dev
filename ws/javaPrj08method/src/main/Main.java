@@ -16,8 +16,6 @@ public class Main {
 		System.out.println("½É¿ø¿ë");
 	}
 	
-	
-
 }
 
 
