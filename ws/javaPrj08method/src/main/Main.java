@@ -1,20 +1,24 @@
 package main;
 
+import method01.MyClass;
+import method02.MyClass02;
+import practice.Practice;
+
 public class Main {
 	
 	public static void main(String[] args) {
-		sayHello();
-		// ~~~~ 어떤 작업 A
-		sayHello();
-		// ~~~ 어떤 작업 B
-		sayHello();
+		
+//		MyClass mc = new MyClass();
+//		mc.test();
+		
+//		MyClass02 mc02 = new MyClass02();
+//		mc02.test();
+		
+		Practice p = new Practice();
+		p.test();
+		
 	}
 	
-	public static void sayHello() {
-		System.out.println("안녕");
-		System.out.println("내 이름은");
-		System.out.println("심원용");
-	}
 	
 }
 
