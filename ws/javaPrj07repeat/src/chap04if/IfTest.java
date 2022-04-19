@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class IfTest {
 	
+	int zzz;
+	
 	//Á¶°Ç¹®
 	/*
 	 * if, else-if, else

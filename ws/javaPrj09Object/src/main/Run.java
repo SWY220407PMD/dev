@@ -2,14 +2,27 @@ package main;
 
 import java.util.Scanner;
 
+import practice.MyClass01;
+
 public class Run {
 
 	public static void main(String[] args) {
 		
-		System.out.println("이제 자바 진짜 진짜 시작 ,,,,");
+		System.out.println("Run 클래스의 main 메소드 호출됨...");
+		System.out.println("============================");
 		
-		Scanner sc = new Scanner(System.in);
-		sc.nextInt();
+		//객체 생성 (MyClass01 클래스 파일을 이용해서 객체)
+		MyClass01 mc01 = new MyClass01();
+		MyClass01 mc011 = new MyClass01();  //swy
+		//객체의 메소드 호출 (MyClass01 클래스 파일의 myMethod01 호출)
+		mc01 = mc011; //swy
+		mc01.myMethod01();
+		mc01.myMethod02();
+		
+		
+		
+		
+		
 		
 		//<객체지향>
 		
@@ -56,7 +69,7 @@ public class Run {
 		 * 
 		 */
 		
-	}
+	}//main
 
 }//class
 
