@@ -12,12 +12,19 @@ public class Run {
 		System.out.println("============================");
 		
 		//객체 생성 (MyClass01 클래스 파일을 이용해서 객체)
-		MyClass01 mc01 = new MyClass01();
-		MyClass01 mc011 = new MyClass01();  //swy
+//		MyClass01 mc01 = new MyClass01();
 		//객체의 메소드 호출 (MyClass01 클래스 파일의 myMethod01 호출)
-		mc01 = mc011; //swy
-		mc01.myMethod01();
-		mc01.myMethod02();
+//		mc01.myMethod01();
+//		mc01.myMethod02();
+		
+		// 객체생성
+		MyClass01 mc = new MyClass01();
+		mc.name = "심원용";
+		mc.age = 20;
+		mc.introduce();
+		
+		
+		
 		
 		
 		
