@@ -2,11 +2,32 @@ package com.kh.main;
 
 public class Charmander {
 	
+	//생성자
+	public Charmander(int level, char type) {
+		this.level = level;
+		this.type = type;
+	}
+	
 	//데이터
-	public int level;
-	public char type;
+	private int level;
+	private char type;
 	
 	//메소드
+	public int getLevel() {
+		return this.level;
+	}
+	
+	public void setLevel(int level) {
+		this.level = level;
+	}
+	
+	public char getType() {
+		return this.type;
+	}
+	
+	public void setType(char type) {
+		this.type = type;
+	}
 	
 	//몸통 박치기
 	public void bodyAttack() {
