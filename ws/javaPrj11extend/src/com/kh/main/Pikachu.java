@@ -24,6 +24,7 @@ public class Pikachu {
 	
 	
 	//데이터
+	private final String name = "피카츄";
 	private int level;
 	private char type; //E,W,F 타입(전기,물,불)
 
@@ -49,7 +50,7 @@ public class Pikachu {
 	
 	//몸통박치기
 	public void bodyAttack() {
-		System.out.println("몸통 박치기 !!!");
+		System.out.println(name + " 몸통 박치기 !!!");
 	}
 	
 	//백만볼트

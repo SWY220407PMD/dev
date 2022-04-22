@@ -9,6 +9,7 @@ public class Charmander {
 	}
 	
 	//데이터
+	private final String name = "파이리";
 	private int level;
 	private char type;
 	
@@ -31,7 +32,7 @@ public class Charmander {
 	
 	//몸통 박치기
 	public void bodyAttack() {
-		System.out.println("몸통 박치기 !!!");
+		System.out.println(name + " 몸통 박치기 !!!");
 	}
 	
 	//전광석화

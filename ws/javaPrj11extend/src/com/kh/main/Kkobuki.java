@@ -9,6 +9,7 @@ public class Kkobuki {
 	}
 	
 	//데이터
+	private final String name = "꼬부기";
 	private int level;
 	private char type;
 	
@@ -31,7 +32,7 @@ public class Kkobuki {
 	
 	//몸통 박치기
 	public void bodyAttack() {
-		System.out.println("몸통 박치기 !!!");
+		System.out.println(name + " 몸통 박치기 !!!");
 	}
 	
 	//물대포
