@@ -2,6 +2,8 @@ package com.kh.kfc.obj;
 
 import java.util.Scanner;
 
+import com.kh.kfc.main.Main;
+
 public class Menu {
 	
 	Scanner sc = new Scanner(System.in);
@@ -20,10 +22,21 @@ public class Menu {
 		case 1: return 1;
 		case 2: return 2;
 		case 3: return 3;
-		default : System.out.println("error !!! (메뉴 선택 중 에러 발생)"); 
-		return -1;
+		default : System.out.println("error !!! (메뉴 선택 중 에러 발생)"); return -1;
 		}
 		
+	}
+	
+	//주문 더 할건지 물어보기
+	public void more() {
+		System.out.println("추가 주문을 하시겠습니까?(Y/N)");
+		String answer = sc.nextLine();
+//		if(answer.equals("Y")) {
+//			Main.finish = false;
+//		}else {
+//			Main.finish = true;
+//		}
+		Main.finish = answer.equals("Y") || answer.equals("y") ? false : true; //삼항 연산자
 	}
 
 }//class
