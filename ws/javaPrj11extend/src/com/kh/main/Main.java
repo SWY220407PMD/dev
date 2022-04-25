@@ -4,6 +4,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		//소스코드 수정 테스트
+		
 		
 		Pikachu p = new Pikachu(1,'E');
 		p.bodyAttack();
