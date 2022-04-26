@@ -6,7 +6,8 @@ public class Main {
 		
 		/*
 		    1. 상속
-			정의: 부모클래스의 data, method, constructor 받아옴
+			정의: 부모클래스의 data, method 받아옴
+			//부모객체가 존재해야 자식객체도 존재할 수 있음
 			사용법 : extends
 			* 모든 클래스의 제일 위의 부모는 Object 클래스이다.
 			
@@ -39,9 +40,6 @@ public class Main {
 		
 		Car rc = new RedCar("빨강" , 100, 3000);
 		rc.startCar();
-		System.out.println(rc.getColor());
-		System.out.println(rc.getSpeed());
-		System.out.println(rc.getPrice());
 		
 		Car rc2 = new GreenCar("녹색", 200, 4000);
 		rc2.startCar();
@@ -49,8 +47,32 @@ public class Main {
 		Car rc3 = new WhatCar("검정", 300, 9900);
 		rc3.startCar();
 		
-		Object
+		rc.go();
+		rc2.go();
+		rc3.go();
+		
+		
+		
+		
+		
+		
+		
+	}//main
 
-	}
+}//class
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
