@@ -5,6 +5,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//소스코드 수정 테스트
+		//진도를 나갑니다 이렇게 ~~~
+		
 		
 		
 		Pikachu p = new Pikachu(1,'E');
