@@ -34,18 +34,14 @@ public abstract class Car {
 	public abstract void startCar();
 	
 	//∫Í∑π¿Ã≈© π‚±‚
-	public void stop() {
-		System.out.println("Car ∫Í∑π¿Ã≈© π‚¿Ω");
-	}
+	public abstract void stop();
 	
 	//æ«ºø π‚±‚
-	public void go() {
-		System.out.println("Car æ«ºø π‚¿Ω");
-	}
+	public abstract void go();
 	
 	
 	
-	//getter / sette 
+	//getter / setter
 	public String getColor() {
 		System.out.print("Car Class getter called...");
 		return this.color;

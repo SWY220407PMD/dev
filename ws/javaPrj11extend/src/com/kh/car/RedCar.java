@@ -20,5 +20,35 @@ public class RedCar extends Car {
 		System.out.println("È«Â÷ ½Ãµ¿ °É¾úÀ½");
 	}
 	
+	@Override
+	public void stop() {
+		System.out.println("È«Â÷ÀÇ ºê·¹ÀÌÅ©");
+	}
 	
-}
+	@Override
+	public void go() {
+		System.out.println("È«Â÷ÀÇ ¾Ç¼¿");
+	}
+	
+	
+}//class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

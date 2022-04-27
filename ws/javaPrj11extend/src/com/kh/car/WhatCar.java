@@ -16,4 +16,30 @@ public class WhatCar extends Car {
 		System.out.println("¿ÓÂ÷ ½Ãµ¿ °É¾úÀ½");
 	}
 	
-}
+	@Override
+	public void stop() {
+		System.out.println("¿ÓÂ÷ÀÇ ºê·¹ÀÌÅ©");
+	}
+	
+	@Override
+	public void go() {
+		System.out.println("¿ÓÂ÷ÀÇ ¾Ç¼¿");
+	}
+	
+}//class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
