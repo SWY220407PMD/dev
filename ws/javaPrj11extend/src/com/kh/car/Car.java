@@ -1,8 +1,13 @@
 package com.kh.car;
 
-public class Car {
+/*
+ * 추상클래스
+ * - abstract 키워드를 붙여주면 됨
+ * - 0 개 이상의 추상메소드를 가지고 있음
+ * - 객체화 불가능
+ */
+public abstract class Car {
 	
-	//기본생성자
 	public Car() {
 		
 	}
@@ -20,10 +25,13 @@ public class Car {
 	private int price = -1;			//가격
 	
 	
+	/*
+	 * 추상 메소드
+	 * - abstract 키워드를 붙여주면 됨
+	 * - 메소드 바디가 존재하지 않음
+	 */
 	//시동걸기
-	public void startCar() {
-		System.out.println("Car 시동 걸었음");
-	}
+	public abstract void startCar();
 	
 	//브레이크 밟기
 	public void stop() {

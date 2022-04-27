@@ -1,5 +1,7 @@
 package com.kh.car;
 
+import java.util.List;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -47,9 +49,22 @@ public class Main {
 		Car rc3 = new WhatCar("검정", 300, 9900);
 		rc3.startCar();
 		
+		rc.startCar();
 		rc.go();
 		rc2.go();
 		rc3.go();
+		
+//		new Car(); //추상클래스는 객체화 불가능
+		
+		
+		
+		//객체 비교 (instanceof)
+		//A instanceof B : A가 B 타입이 맞는지 확인하여 boolean 타입의 데이터를 리턴
+//		if(rc instanceof Object) {
+//			System.out.println("ㅇㅇ맞음");
+//		}else {
+//			System.out.println("ㄴㄴ아님");
+//		}
 		
 		
 		
