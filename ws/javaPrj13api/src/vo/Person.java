@@ -2,23 +2,25 @@ package vo;
 
 public class Person {
 	
-	//생성자 (모든 필드를 매개변수로 하는)
-	public Person(String name, int age, double height, char gender) {
+	
+	//필드에 맞게 생성자
+	public Person(String name, int age, double height, double weight, char gender) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.height = height;
+		this.weight = weight;
 		this.gender = gender;
 	}
 	
-	//필드
+	//필드 
 	private String name;
 	private int age;
 	private double height;
+	private double weight;
 	private char gender;
 	
 	
-	//getter/setter
 	public String getName() {
 		return name;
 	}
@@ -37,6 +39,12 @@ public class Person {
 	public void setHeight(double height) {
 		this.height = height;
 	}
+	public double getWeight() {
+		return weight;
+	}
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
 	public char getGender() {
 		return gender;
 	}
@@ -44,33 +52,15 @@ public class Person {
 		this.gender = gender;
 	}
 	
-	public void info() {
-		//가지고있는 모든 데이터 출력해주는 메소드
-		System.out.println("name : " + name);
-		System.out.println("age : " + age);
-		System.out.println("gender : " + gender);
-		System.out.println("height : " + height);
-	}
-	
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", age=" + age + ", height=" + height + ", gender=" + gender + "]";
+		return "Person [name=" + name + ", age=" + age + ", height=" + height + ", weight=" + weight + ", gender="
+				+ gender + "]";
 	}
 	
+	public String info() {
+		return "this.name : " + this.name;
+	}
 	
-	
 
-}//class
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
