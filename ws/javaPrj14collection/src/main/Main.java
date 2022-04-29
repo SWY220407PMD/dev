@@ -8,7 +8,9 @@ public class Main {
 		Test t = new Test();
 //		t.testList();
 //		t.testSet();
-		t.testMap();
+//		t.testMap();
+//		t.testStack();
+		t.testQueue();
 
 	}
 

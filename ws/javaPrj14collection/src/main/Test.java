@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
 
 public class Test {
 	
@@ -92,8 +95,63 @@ public class Test {
 		System.out.println(map.get("first"));
 	}
 	
+	//Stack
+	public void testStack() {
+		Stack s = new Stack();
+		s.push(10);
+		s.push(20);
+		s.push(30);
+		
+		Object x1 = s.pop();
+		Object x2 = s.pop();
+		Object x3 = s.pop();
+		
+		System.out.println(x1);
+		System.out.println(x2);
+		System.out.println(x3);
+	}
+	
+	
+	
+	
+	
+	//Queue
+	public void testQueue() {
+		 Queue q = new LinkedList();
+		 
+		 q.offer(10);
+		 q.offer(20);
+		 q.offer(30);
+		 
+		 Object x0 = q.peek();
+		 System.out.println(x0);
+		 
+		 q.remove();
+		 
+		 Object x1 = q.poll();
+		 Object x2 = q.poll();
+		 Object x3 = q.poll();
+		 
+		 
+		 
+		 System.out.println(x1);
+		 System.out.println(x2);
+		 System.out.println(x3);
+	}
+	
 	
 }//class
+
+
+
+
+
+
+
+
+
+
+
 
 
 
