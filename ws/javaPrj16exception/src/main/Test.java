@@ -17,7 +17,11 @@ public class Test {
 	public void methodA() throws Exception 
 	{
 		System.out.println("메소드 A 호출됨 ...");
-		methodB();
+		try {
+			methodB();
+		}catch(Exception e) {
+			throw new MyException();
+		}
 		System.out.println("메소드 A 종료 ...");
 	}
 	
@@ -28,7 +32,7 @@ public class Test {
 		System.out.println("메소드 B 종료 ...");
 	}
 	
-	public void methodC() throws Exception 
+	public void methodC()
 	{
 		System.out.println("메소드 C 호출됨 ...");
 		int x = 1 / 0;

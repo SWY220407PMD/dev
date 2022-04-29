@@ -26,7 +26,17 @@ public class Main {
 		{
 //			e.printStackTrace(); //빨간글씨로 에러 메세지 출력
 			System.out.println("메인 메소드에서 Exception catch");
+			if(e instanceof MyException) {
+				System.out.println("방금 잡은 예외는 MyException 타입");
+			}
 		}
+		
+		// 내가 만든 예외 처리해봄 ㅎㅎ
+//		try {
+//			throw new MyException();
+//		}catch(Exception e) {
+//			System.out.println("내가 만든 에러 잡음");
+//		}
 		
 		
 //		try {
