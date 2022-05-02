@@ -1,10 +1,12 @@
 package main;
 
+import java.util.Stack;
+
 public class Main {
 
 	public static void main(String[] args) {
 		
-		System.out.println("===== 예외 처리 =====");
+		
 		
 		//예외(너무 크리티컬하지 않은 에러) == 에러
 		
@@ -26,6 +28,7 @@ public class Main {
 		{
 //			e.printStackTrace(); //빨간글씨로 에러 메세지 출력
 			System.out.println("메인 메소드에서 Exception catch");
+			System.out.println("e 의 클래스 ::: " + e.getClass());
 			if(e instanceof MyException) {
 				System.out.println("방금 잡은 예외는 MyException 타입");
 			}
