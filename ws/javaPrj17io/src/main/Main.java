@@ -8,7 +8,11 @@ public class Main {
 	public static void main(String[] args) {
 		
 		TestFile tf = new TestFile();
-		tf.test();
+//		tf.test();
+//		tf.test2();
+		tf.test3();
+		
+		
 		
 	}
 
