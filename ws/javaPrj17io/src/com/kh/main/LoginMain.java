@@ -17,7 +17,11 @@ public class LoginMain {
 		sc.nextLine(); //엔터키 제거 목적
 		
 		if(num == 1) {
-			lt.join();
+			try {
+				lt.join();
+			} catch (JoinException e) {
+				System.out.println("회원가입 실패 !!!");
+			}
 		}else if(num == 2) {
 			lt.login();
 		}else {
