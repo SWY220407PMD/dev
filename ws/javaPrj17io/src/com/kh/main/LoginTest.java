@@ -20,10 +20,9 @@ public class LoginTest {
 		
 		//사용자로부터 아이디, 비번 입력받기
 		System.out.println("===로그인 할 ID, PWD 입력하세요===");
-		System.out.print("아이디 : ");
-		String id = sc.nextLine();
-		System.out.print("패스워드 : ");
-		String pwd = sc.nextLine();
+		String[] strArr = inputUser();
+		String id = strArr[0];
+		String pwd = strArr[1];
 		
 		//파일에서 아이디, 비번 확인하여
 		//로그인 가능 여부 판단하기
@@ -78,11 +77,10 @@ public class LoginTest {
 	
 	//회원가입
 	public void join() throws JoinException {
-		System.out.println("회원가입");
-		System.out.print("ID : ");
-		String id = sc.nextLine().trim(); //trim : 문자열 공백 제거
-		System.out.print("PWD : ");
-		String pwd = sc.nextLine().trim();
+		System.out.println("===== 회원가입 =====");
+		String[] strArr = inputUser();
+		String id = strArr[0];
+		String pwd = strArr[1];
 		
 		//아이디, 패스워드 중에 '/' 있으면 예외 발생시키기
 		if(id.contains("/") || pwd.contains("/")) {
@@ -96,6 +94,10 @@ public class LoginTest {
 		BufferedWriter bw = null;
 		try {
 			bw = new BufferedWriter(new FileWriter(f, true));
+			//조인 메서드에서 예외를 exception 말고 joinexception으로 던지는 이유가 
+			//부모를 상속받기 때문이라고 하셨는데 꼭 그렇게 해야만 하는 이유가 있나요? 
+			//그럼 조인익셉션 말고 그냥 throws exception해도 상관은 없는 거죠?
+
 			bw.write(id);
 			bw.write("/");
 			bw.write(pwd);
@@ -108,7 +110,22 @@ public class LoginTest {
 		}
 		
 	}
-
+	
+	public String[] inputUser() {
+		System.out.print("ID : ");
+		String id = sc.nextLine().trim(); //trim : 문자열 공백 제거
+		System.out.print("PWD : ");
+		String pwd = sc.nextLine().trim();
+		
+//		String[] strArr = new String[2];
+//		strArr[0] = id;
+//		strArr[1] = pwd;
+//		return strArr;
+		
+		//위의 4줄과 같은 코드
+		return new String[] {id,pwd};
+	}
+	
 }//class
 
 
