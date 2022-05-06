@@ -18,7 +18,8 @@ public class ClientMain {
 		System.out.println("클라이언트 시작 ~~~ !");
 		
 		//접속 할 서버 소켓 정보 인자로 전달
-		Socket s = new Socket("127.0.0.1", 12345);
+		//port 번호는 well-known 포트를 제외하고 사용할 것
+		Socket s = new Socket("localhost", 12345); //localhost(==127.0.0.1) 도 사용가능
 		
 		//stream 얻기
 		OutputStream os = s.getOutputStream();				//1 바이트
