@@ -36,7 +36,7 @@ public class MsgSenderThread extends Thread {
 
     private void sendMsg(){
         String inputMsg = sc.nextLine();
-        writer.println(inputMsg);
+        writer.println("»ó´ë¹æ : " + inputMsg);
         writer.flush();
     }
 
