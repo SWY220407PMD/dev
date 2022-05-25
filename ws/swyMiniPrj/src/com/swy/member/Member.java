@@ -32,7 +32,7 @@ public class Member {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				String dbPwd = rs.getString(1);
+				String dbPwd = rs.getString("pwd"); //칼럼 순서에 따른 번호 또는 칼럼명
 				if(dbPwd.equalsIgnoreCase(pwd)) {
 					//로그인 성공
 					System.out.println("로그인 성공 !!!");
