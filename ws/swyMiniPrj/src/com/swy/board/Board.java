@@ -100,22 +100,50 @@ public class Board {
 				System.out.println();
 			}
 			
-			
-			
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		//파이널리 블럭에서 자원 반납
 		
 		
+		//게시판 상세보기 메소드 호출
+		showBoardDetail();
 		
-		
-		
-	}
+	}//showList
 	
 	//게시글 상세 조회
 	public void showBoardDetail() {
 		
+		// 게시글 번호 (no) 필요함
+		// 출력문 추가
+		System.out.print("조회할 게시글 번호 입력 : ");
+		int no = MyUtil.scInt();
+		
+		Connection conn = OracleDB.getOracleConnection();
+		
+		String sql = "SELECT * FROM BOARD WHERE NO = ? AND DELETE_YN ='N'";
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, no);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				String title = rs.getString("TITLE");
+				String content = rs.getString("CONTENT");
+				
+				System.out.println("제목 : " + title);
+				System.out.println("내용 : " + content);
+				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			//자원 반납
+		}
 	}
 	
 	
