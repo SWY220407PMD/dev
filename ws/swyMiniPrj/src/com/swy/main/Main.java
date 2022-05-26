@@ -29,8 +29,6 @@ public class Main {
 			default : System.out.println("다시 선택하세요");
 			}
 		}//while
-		
-		
 
 	}//main
 

@@ -11,6 +11,5 @@ public class MyUtil {
 		sc.nextLine();			//엔터키 제거 목적
 		return n;
 	}
-	
 
 }

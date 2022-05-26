@@ -21,7 +21,6 @@ public class Member {
 		System.out.print("패스워드 : ");
 		String pwd = MyUtil.sc.nextLine();
 		
-		
 		//디비 연결 얻기
 		Connection conn = OracleDB.getOracleConnection();
 		//해당 아이디에 맞는 패스워드 디비에서 조회하기
@@ -52,7 +51,6 @@ public class Member {
 		}
 		
 		//디비에서 조회한 패스워드가 일치하는지 확인
-		
 		System.out.println("로그인 실패 ...");
 		return false;
 	}
@@ -111,16 +109,13 @@ public class Member {
 			pstmt2.setString(3, nick);
 			int result = pstmt2.executeUpdate();
 			
-			
 			if(result == 1) {
 				System.out.println("회원 가입 성공 !!!");
 				return true;
 			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 		System.out.println("회원가입 실패...");
 		return false;
 	}

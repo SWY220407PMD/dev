@@ -18,7 +18,6 @@ public class Board {
 			return;
 		}
 		
-		
 		//안내 문구 출력
 		//입력 받기 (제목, 내용)
 		System.out.println("===== 게시글 작성 =====");

@@ -27,15 +27,10 @@ public class OracleDB {
 		Connection conn = null;
 		try {
 			Class.forName(driver);
-			
 			conn = DriverManager.getConnection(url, id, pwd);
-			
-			
-			
 		} catch (ClassNotFoundException | SQLException e) {
 			System.out.println("커넥션 가져오기 실패");
 		}
-		
 		return conn;
 	}
 	
