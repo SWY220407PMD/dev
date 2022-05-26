@@ -99,14 +99,13 @@ public class Member {
 			//3. 회원가입성공? 디비 저장
 			String sqlInsert 
 				= "INSERT INTO MEMBER(NO,ID,PWD,NICK) "
-						+ "VALUES(?,?,?,?)";
+						+ "VALUES(MEMBER_NO_SEQ.NEXTVAL,?,?,?)";
 //			Statement stmtInsert = conn.createStatement();
 //			int result = stmtInsert.executeUpdate(sqlInsert);
 			PreparedStatement pstmt2 = conn.prepareStatement(sqlInsert);
-			pstmt2.setInt(1, 5);
-			pstmt2.setString(2, id);
-			pstmt2.setString(3, pwd);
-			pstmt2.setString(4, nick);
+			pstmt2.setString(1, id);
+			pstmt2.setString(2, pwd);
+			pstmt2.setString(3, nick);
 			int result = pstmt2.executeUpdate();
 			
 			
