@@ -12,6 +12,13 @@ public class Board {
 
 	//게시글 작성
 	public void write() {
+		//작성자 == 로그인한 유저
+		if(Member.loginUserNo == 0) {
+			System.out.println("로그인 한 유저만 글을 쓸 수 있습니다.");
+			return;
+		}
+		
+		
 		//안내 문구 출력
 		//입력 받기 (제목, 내용)
 		System.out.println("===== 게시글 작성 =====");
@@ -20,7 +27,6 @@ public class Board {
 		System.out.print("내용 : ");
 		String content = MyUtil.sc.nextLine();
 		
-		//작성자 == 로그인한 유저
 		
 		//디비에 저장
 		//연결 얻기
