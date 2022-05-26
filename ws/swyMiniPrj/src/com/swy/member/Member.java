@@ -11,6 +11,8 @@ import com.swy.util.MyUtil;
 
 public class Member {
 	
+	public static int loginUserNo;
+	
 	//로그인
 	public boolean login() {
 		System.out.println("=====로그인=====");
@@ -23,7 +25,7 @@ public class Member {
 		//디비 연결 얻기
 		Connection conn = OracleDB.getOracleConnection();
 		//해당 아이디에 맞는 패스워드 디비에서 조회하기
-		String sql = "SELECT PWD FROM MEMBER WHERE ID = ?";
+		String sql = "SELECT NO, PWD FROM MEMBER WHERE ID = ?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
@@ -32,9 +34,11 @@ public class Member {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				String dbPwd = rs.getString("pwd"); //칼럼 순서에 따른 번호 또는 칼럼명
+				String dbPwd = rs.getString("PWD"); //칼럼 순서에 따른 번호 또는 칼럼명
+				int no = rs.getInt("NO");			//칼럼명으로 조회시, 대소문자 상관 없음
 				if(dbPwd.equalsIgnoreCase(pwd)) {
 					//로그인 성공
+					loginUserNo = no;
 					System.out.println("로그인 성공 !!!");
 					return true;
 				}
