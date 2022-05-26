@@ -2,7 +2,9 @@ package com.swy.board;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 import com.swy.db.OracleDB;
 import com.swy.member.Member;
@@ -55,6 +57,59 @@ public class Board {
 
 	//게시글 목록 조회
 	public void showList() {
+		System.out.println("===== 게시글 목록 조회 =====");
+		//모든 게시글 조회해서 보여주기
+		
+		//1. 커넥션 준비
+		Connection conn = OracleDB.getOracleConnection();
+		//2. 쿼리 작성
+		String sql = "SELECT * FROM BOARD WHERE DELETE_YN = 'N' ORDER BY REGISTER_DATE DESC";
+		//3. pstmt 생성 (sql 전달)
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			//4. pstmt 물음표 채우기
+			// 채울거 없으니 패스 ~~~
+			//5. pstmt 실행 executeQuery
+			//6. 결과 얻기 (결과집합)
+			ResultSet rs = pstmt.executeQuery();
+			
+			//7. 결과에 따른 로직 작성
+			
+			System.out.print("글번호");
+			System.out.print(" | ");
+			System.out.print("게시글 제목");
+			System.out.print(" | ");
+			System.out.print("작성자 번호");
+			System.out.print(" | ");
+			System.out.print("게시글 작성일");
+			System.out.println("\n-------------------------------");
+			
+			while(rs.next()) {
+				int no = rs.getInt("NO"); //게시글 번호
+				String title = rs.getString("TITLE");//글 제목
+				int writerNo = rs.getInt("WRITER_NO"); //작성자 회원 번호
+				Timestamp regDate = rs.getTimestamp("REGISTER_DATE");
+				
+				System.out.print(no);
+				System.out.print(" | ");
+				System.out.print(title);
+				System.out.print(" | ");
+				System.out.print(writerNo);
+				System.out.print(" | ");
+				System.out.print(regDate);
+				System.out.println();
+			}
+			
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
 		
 	}
 	
@@ -65,4 +120,16 @@ public class Board {
 	
 	
 
-}
+}//class
+
+
+
+
+
+
+
+
+
+
+
+
