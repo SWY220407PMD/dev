@@ -43,7 +43,6 @@ public class Member {
 					return true;
 				}
 			}
-			
 		} catch (SQLException e) {
 			System.out.println("SQL 예외 발생 !!!");
 		}finally {
