@@ -126,3 +126,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,windows,eclipse
 
+ws/swyMiniPrj/.project
+ws/swyMiniPrj/.classpath
