@@ -1,10 +1,10 @@
 package com.swy.member;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import com.swy.db.OracleDB;
 import com.swy.util.MyUtil;
@@ -124,10 +124,81 @@ public class Member {
 	 * 회원 정보 수정
 	 */
 	public void edit() {
+		//로그인 한 유저만 접근 가능
+		//로그인 안했으면 바로 리턴시켜버리기
+		if(!checkLogin()) {
+			System.out.println("로그인 한 유저만 수정이 가능합니다.");
+			return;
+		}
 		
+		// 우선 현재 회원 정보를 보여줘야 함
+		showUserInfo();
+		
+		// 수정할 정보 선택하게  함 (비번 변경, 닉네임 변경)
+		
+		// 선택에 따른 로직 작성
 	}
 
 	
+	private void showUserInfo() {
+		Connection conn = OracleDB.getOracleConnection();
+		
+		String sql = "SELECT * FROM MEMBER WHERE NO = ?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, loginUserNo);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				String id = rs.getString("ID");
+				String nick = rs.getString("NICK");
+				Date enrollDate = rs.getDate("ENROLL_DATE");
+				
+				System.out.println("===== 현재 회원 정보 =====");
+				
+				System.out.println("id : " + id );
+				System.out.println("NICK : " + nick );
+				System.out.println("ENROLL_DATE : " + enrollDate );
+				System.out.println("--------------------------");
+				
+				// 수정 여부 확인
+				System.out.print("회원정보 수정하시겠습니까??(Y,N)");
+				String answer = MyUtil.sc.nextLine();
+				if("Y".equalsIgnoreCase(answer)) {
+					//회원정보 수정 진행
+					System.out.println("어떤거 수정??(NICK, 수정가능한항목1, 수정가능한항목2 ...)");
+					String col = MyUtil.sc.nextLine();
+					if("NICK".equalsIgnoreCase(col)) {
+						System.out.print("변경할 닉네임 : " );
+						String newNick = MyUtil.sc.nextLine();
+						//새로운 닉네임으로 DB update 진행
+						String sql2 = "UPDATE MEMBER SET NICK = ? WHERE NO = ?";
+						pstmt = conn.prepareStatement(sql2);
+						pstmt.setString(1, newNick);
+						pstmt.setInt(2, loginUserNo);
+						int result = pstmt.executeUpdate();
+						if(result == 1) {
+							System.out.println("닉네임 변경 성공!");
+						}else {
+							System.out.println("닉네임 변경 실패..");
+						}
+						
+					}
+				}else {
+					System.out.println("회원정보 수정 안함");
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			OracleDB.close(conn);
+			OracleDB.close(pstmt);
+			OracleDB.close(rs);
+		}
+		
+	}
+
 	/*
 	 * 회원 탈퇴
 	 * 
@@ -136,7 +207,10 @@ public class Member {
 	public void quit() {
 		
 		//로그인 안했으면 바로 리턴시켜버리기
-		if(checkLogin()) return;
+		if(!checkLogin()) {
+			System.out.println("로그인 한 유저만 탈퇴가 가능합니다.");
+			return;
+		}
 		
 		
 		System.out.println("===== 회원 탈퇴 =====");
@@ -165,7 +239,6 @@ public class Member {
 	private boolean checkLogin() {
 		//로그인 한 경우에만 탈퇴가 가능하도록 처리
 		if(loginUserNo == 0) {
-			System.out.println("로그인 한 유저만 탈퇴가 가능합니다.");
 			return false;
 		}
 		return true;
