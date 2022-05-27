@@ -120,18 +120,94 @@ public class Member {
 		return false;
 	}
 
+	/*
+	 * 회원 정보 수정
+	 */
 	public void edit() {
-		// TODO Auto-generated method stub
 		
 	}
 
+	
+	/*
+	 * 회원 탈퇴
+	 * 
+	 * 회원 탈퇴 칼럼을 Y 로 바꾼다.
+	 */
 	public void quit() {
-		// TODO Auto-generated method stub
 		
+		//로그인 안했으면 바로 리턴시켜버리기
+		if(checkLogin()) return;
+		
+		
+		System.out.println("===== 회원 탈퇴 =====");
+		
+		System.out.println("탈퇴 하시겠습니까?(Y,N)");
+		String answer = MyUtil.sc.nextLine();
+		
+		if("y".equalsIgnoreCase(answer)) {
+			//탈퇴 ㅇㅇ
+			quitMember();
+			
+		}else {
+			//탈퇴 ㄴㄴ
+			// 다행이다 ㅎㅎ
+			System.out.println("다행이에요 ㅎㅎ 탈퇴하지마세요 ㅠㅜ");
+		}
+		
+	}
+
+	/*
+	 * 로그인 여부 판단
+	 * 
+	 * @return true // 로그인을 한 경우
+	 * @return false // 로그인을 하지 않은 경우 
+	 */
+	private boolean checkLogin() {
+		//로그인 한 경우에만 탈퇴가 가능하도록 처리
+		if(loginUserNo == 0) {
+			System.out.println("로그인 한 유저만 탈퇴가 가능합니다.");
+			return false;
+		}
+		return true;
+	}
+
+	//회원 탈퇴 처리
+	private void quitMember() {
+		
+		//디비 가서 현재 회원의 탈퇴 칼럼 Y 로 처리
+		//(현재 회원 번호는 스태틱 변수에 있음)
+		Connection conn = OracleDB.getOracleConnection();
+		
+		String sql = "UPDATE MEMBER SET QUIT_YN = 'Y' WHERE NO = ?";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, loginUserNo);
+			int result = pstmt.executeUpdate();
+			if(result == 1) {
+				System.out.println("회원 탈퇴 완료");
+			}else {
+				System.out.println("회원 탈퇴 실패");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			OracleDB.close(conn);
+			OracleDB.close(pstmt);
+		}
 	}
 	
 
 }//class
+
+
+
+
+
+
+
+
+
 
 
 
