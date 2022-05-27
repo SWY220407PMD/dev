@@ -119,6 +119,16 @@ public class Member {
 		System.out.println("회원가입 실패...");
 		return false;
 	}
+
+	public void edit() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void quit() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }//class
