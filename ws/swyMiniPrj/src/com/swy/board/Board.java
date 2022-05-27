@@ -63,7 +63,11 @@ public class Board {
 		//1. 커넥션 준비
 		Connection conn = OracleDB.getOracleConnection();
 		//2. 쿼리 작성
-		String sql = "SELECT * FROM BOARD WHERE DELETE_YN = 'N' ORDER BY REGISTER_DATE DESC";
+		String sql = "SELECT "
+				+ "B.NO , TITLE , CONTENT , WRITER_NO , REGISTER_DATE , DELETE_YN , NICK "
+				+ "FROM BOARD B JOIN MEMBER M ON B.WRITER_NO = M.NO "
+				+ "WHERE DELETE_YN = 'N' "
+				+ "ORDER BY REGISTER_DATE DESC";
 		//3. pstmt 생성 (sql 전달)
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -87,7 +91,7 @@ public class Board {
 			while(rs.next()) {
 				int no = rs.getInt("NO"); //게시글 번호
 				String title = rs.getString("TITLE");//글 제목
-				int writerNo = rs.getInt("WRITER_NO"); //작성자 회원 번호
+				String writerNo = rs.getString("NICK"); //작성자 회원 번호
 				Timestamp regDate = rs.getTimestamp("REGISTER_DATE");
 				
 				System.out.print(no);
