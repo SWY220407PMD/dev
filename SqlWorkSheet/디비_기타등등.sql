@@ -1,0 +1,84 @@
+-- 급여가 높은 상위 3명 조회
+SELECT *
+FROM
+( --인라인 뷰
+    SELECT *
+    FROM EMP
+    ORDER BY SAL DESC
+)
+WHERE ROWNUM <= 3
+;
+
+SELECT *
+FROM EMP
+ORDER BY SAL DESC
+;
+
+
+-- 서브쿼리 (다중 열)
+SELECT EMPNO, ENAME, SAL, DEPTNO
+FROM EMP
+WHERE (DEPTNO, SAL) IN (SELECT DEPTNO, SAL
+                        FROM EMP
+                        WHERE DEPTNO = 30);
+
+
+SELECT *
+FROM EMP;
+
+
+
+-- 스칼라 서브쿼리 (단일 행)
+SELECT 
+    ENAME
+    , DEPTNO
+    , SAL
+    ,
+    (
+    SELECT TRUNC(AVG(SAL))
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+    ) AS 부서평균급여
+    FROM EMP E
+    ;
+
+
+SELECT * FROM EMP;
+-- 상(호연)관 (서브)쿼리
+SELECT 
+    ENAME
+    , JOB
+    , DEPTNO
+    ,
+    (
+    SELECT DNAME
+    FROM DEPT
+    WHERE DEPTNO = E.DEPTNO
+    ) DNAME
+FROM EMP E
+;
+
+
+-- ORDER BY 절 서브쿼리
+SELECT EMPNO, ENAME, DEPTNO, HIREDATE
+FROM EMP E
+ORDER BY 
+(
+    SELECT DNAME
+    FROM DEPT
+    WHERE DEPTNO = E.DEPTNO
+) 
+DESC
+;
+
+-- TRUNCATE (==DELETE)
+SELECT * FROM EMP;
+TRUNCATE TABLE EMP;
+DELETE FROM EMP;
+ROLLBACK;
+
+
+
+
+
+
