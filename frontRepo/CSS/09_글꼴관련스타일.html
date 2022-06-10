@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>글꼴관련스타일</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <style>
+
+        html {
+            background-color: lightgray;
+            font-size: 8px;
+        }
+
+        #outer {
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        span {
+            /*
+            font-family: 궁서체;
+            font-family: 고딕체;
+            font-family: 용용체, 궁서체;
+            font-family: 'Noto Sans KR', sans-serif;
+            */
+            font-size: 16px;
+            font-size: 100%;
+            font-size: 2em;
+            font-size: 4rem;
+            font-weight: normal; /* 기본값 */
+            
+            font-weight: bold;
+            font-weight: 900;
+            font-weight: 500;
+            font-weight: 100;
+            font-weight: bolder; /* 부모의 font-weight 의 영향을 받음 */
+            font-weight: lighter;
+            /* 100 ~ 900 (기본값 500) */
+        }
+
+        #outer + span {
+            color : green;
+            font-variant: small-caps;/*기본값:normal*/
+            font-style: normal;
+            font-style: italic;
+            font-style: oblique;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>글꼴관련스타일</h1>
+
+    <hr>
+
+    <div id="outer">
+        <span>
+            안녕하세요
+        </span>
+    </div>
+    
+
+    <span>hello world</span>
+
+
+
+</body>
+</html>
