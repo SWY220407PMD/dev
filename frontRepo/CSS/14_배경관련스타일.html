@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>배경 관련 스타일</title>
+
+    <style>
+        body{
+            background-color: rgba(70, 70, 70, 0.5);
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(150, 200, 150, 0.5);
+            padding: 30px;
+            border: 3px solid black;
+            width: 50%;
+            /* box-sizing: content-box; */
+            box-sizing: border-box;/*테두리 까지 사이즈 지정*/
+        }
+
+        #test{
+            width: 1000px;
+            height: 800px;
+            border:3px solid blue;
+            background-image: url("resources/images/helloWorld300200.png");
+            /* background-repeat: repeat; */
+            /* background-repeat: repeat-x; */
+            /* background-repeat: repeat-y; */
+            background-repeat: no-repeat;
+            
+            background-size: auto; /*기본값*/
+            /* background-size: contain;
+            background-size: cover;
+            background-size: 1000px 800px;
+            background-size: 50% 50%; */
+
+            /* background-position:좌/우/가운데 위/아래/가운데 | px px | % % */
+            /* left/right/center top/bottom/center */
+            background-position: center center;
+            background-position: 100px 80px;
+            background-position: 10% 10%;
+
+            background-attachment: scroll; /* 기본값 */
+            background-attachment: fixed;
+
+
+        }
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <h1>배경 관련 스타일</h1>
+
+    <br><br><br><hr><br><br><br>
+
+    <p>background ~</p>
+
+    <!-- .box#target${$번째요소}*10 -->
+    <div class="box" id="target1">1번째요소</div>
+    <div class="box" id="target2">2번째요소</div>
+    <div class="box" id="target3">3번째요소</div>
+    <div class="box" id="target4">4번째요소</div>
+    <div class="box" id="target5">5번째요소</div>
+    <div class="box" id="target6">6번째요소</div>
+    <div class="box" id="target7">7번째요소</div>
+    <div class="box" id="target8">8번째요소</div>
+    <div class="box" id="target9">9번째요소</div>
+    <div class="box" id="target10">10번째요소</div>
+
+
+    <hr><hr><hr>
+
+    <div id="test"></div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>
