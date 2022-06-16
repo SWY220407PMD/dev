@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>트랜지션</title>
+    <style>
+        .box{
+            border: 3px solid red;
+            width: 100px;
+            height: 100px;
+        }
+        
+        #t01:hover{
+            background-color: blue;
+            width: 100%;
+            transition: 2s;
+            transition-delay: 1s;
+            transition-timing-function: steps(2);
+        }
+
+        #t02:hover{
+            /* transform: rotate(720deg); 시계방향 회전 */
+            /* transform: rotateX(45deg); */
+            transform: rotateY(45deg);
+            transition: 2s;
+        }
+
+        #t03:hover{
+            transition: 2s;
+            /* transform: scale(2); */
+            transform: scaleX(2);
+            transform: scaleY(2);
+            transform: skew(45deg, 45deg);
+            transform: skewX(45deg, 45deg);
+            transform: skewY(45deg, 45deg);
+            transform: scale(2) skew(30deg) rotate(360deg);
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+    
+    <h1>트랜지션</h1>
+
+    <br><br><br><hr><br><br><br>
+
+    <div class="box" id="t01"></div>
+
+
+    <br><br><br><hr><br><br><br>
+
+    <h1>트랜스폼</h1>
+
+    <div class="box" id="t02"></div>
+
+
+    <h1>스케일</h1>
+
+    <div class="box" id="t03"></div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>
