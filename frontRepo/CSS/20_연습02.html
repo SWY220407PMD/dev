@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        ul>li{
+            list-style: none;
+            border: 1px solid blue;
+            box-sizing: border-box;
+            float: left;
+            width: 20%;
+            text-align: center;
+        }
+        ul{
+            padding: 0px;
+            margin: 0px;
+        }
+        ul>li a{
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+
+        /* 서브메뉴 일단 안보이게 */
+        ul>li>ul{ 
+            display: none;
+        }
+
+        /* a태그에 마우스 올리면, 서브메뉴 보이게 */
+        ul>li>a:hover+ul{
+            display: block;
+        }
+
+        #nav{
+            border: 3px solid red;
+            width: 80%;
+            height: 10vh;
+            margin: auto;
+        }
+
+        ul>li>ul:hover{
+            display: block;
+        }
+
+        .sub-menu{
+            border: 2px dashed green;
+            height: 50px;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    
+
+    <div id="nav">
+        <ul>
+            <li>
+                <a href="">111</a>
+                <ul class="sub-menu">
+                    <li>첫번째</li>
+                    <li>두번째</li>
+                    <li>세번째</li>
+                </ul>
+            </li>
+            <li>
+                <a href="">222</a>
+                <ul class="sub-menu">
+                    <li>첫번째</li>
+                    <li>두번째</li>
+                    <li>세번째</li>
+                </ul>
+            </li>
+            <li><a href="">333</a></li>
+            <li><a href="">444</a></li>
+            <li><a href="">555</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

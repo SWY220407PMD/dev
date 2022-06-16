@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      border:3px solid black;
+      box-sizing: border-box;
+    }
+
+    #t1{
+      width: 200px;
+      height: 200px;
+      border-color: red;
+    }
+
+    #t2{
+      border-color: blue;
+      position: relative;
+      top: -200px;
+      left: 0px;
+    }
+
+    #t3{
+      border-color: green;
+      position: absolute;
+      left: 100px;
+      bottom:100px;
+    }
+
+    #outer{
+      position: relative;
+    }
+
+    #t{
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;;
+    }
+
+    #t td{
+      border: 5px solid blue;
+    }
+
+    .red{background-color: red;}
+    .blue{background-color: blue;}
+    .green{background-color: green;}
+    .purple{background-color: purple;}
+    .orange{background-color: orange;}
+
+    .float-left{float: left;}
+    .float-right{float: right;}
+
+    #selector-test:hover{
+      background-color: lightgray;
+    }
+    #selector-test:hover+div{
+      background-color: skyblue;
+      display: block;
+    }
+
+    #selector-test, #selector-test+div{
+      border-color: blue;
+    }
+
+    #selector-test+div{
+      display: none;
+    }
+
+  </style>
+
+</head>
+<body>
+  
+    <h1>테스트</h1>
+
+    <br><br><br><hr><br><br><br>
+
+    <div id="outer">
+      <div class="box" id="t1"></div>
+      <div class="box" id="t2"></div>
+      <div class="box" id="t3"></div>
+    </div>
+
+    <div class="box">
+      새로운 디브
+    </div>
+
+
+    <br><br><br><hr><br><br><br>
+
+    <table id="t">
+      <tr>
+        <td><div class="box">1</div></td>
+        <td><div class="box">2</div></td>
+      </tr>
+      <tr>
+        <td><div class="box">3</div></td>
+        <td><div class="box">4</div></td>
+      </tr>
+    </table>
+
+
+    <br><br><br><hr><br><br><br>
+
+    <h2>float 테스트</h2>
+
+    <div class="box red float-left"></div>
+    <div class="box blue float-left"></div>
+    <br clear="both">
+    <div class="box green"></div>
+    <div class="box purple"></div>
+    <div class="box orange"></div>
+
+    
+    <br><br><br><hr><br><br><br>
+
+    <h2>선택자</h2>
+
+    <div class="box" id="selector-test"></div>
+    <div class="box"></div>
+
+
+
+    
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+    
+
+
+</body>
+</html>
