@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기본 문법</title>
+    <style>
+        .area{
+            border: 1px solid black;
+            width: 500px;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
     <h1 id="heading1">기본 문법</h1>
@@ -38,8 +45,47 @@
         <li>undefined</li>
     </ul>
 
+    <button onclick="typeTest();">자료형 테스트</button>
 
+    <div id="area1" class="area"></div>
 
+    <hr>
+
+    <h2>2. 데이터 형변환</h2>
+
+    <h3>1) 문자열과 숫자의 '+' 연산</h3>
+    <p>
+       문자열 + 숫자 ==> 문자열
+       111 + 222 + '333' ==> '333333'
+    </p>
+
+    <h3>2) 강제 형변환</h3>
+    <p>
+        JS 에서 string -> number 변환
+        * Number 내장객체 사용
+        또는
+        * parseInt()
+        * parseFloat()
+    </p>
+
+    <button onclick="castingTest();">강제 형변환 테스트</button>
+
+    <hr>
+
+    <h2>3. 연산자</h2>
+    <h3>== vs ===</h3>
+    <p>
+        == : 값이 일치하는지 확인
+        === : 값 , 자료형 모두 일치하는지 확인
+    </p>
+
+    <hr>
+
+    <h2>4. 제어문 </h2>
+
+    <h3>for in 문</h3>
+
+    <button onclick="forInTest();">for in 테스트</button>
 
 
 

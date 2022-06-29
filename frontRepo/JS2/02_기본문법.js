@@ -73,10 +73,84 @@ window.onload = function(){
     // - 함수 안에서 let, const 키워드로 선언된 변수는 블록 유효 범위를 갖는다.
 
     if(true){
-        const temp = 10;
+        var temp = 10;
         console.log("if문 안쪽 temp : " + temp);
     }
     console.log("if문 바깥 temp : " + temp);
+
+
+}//window.onload function end
+
+//자료형 테스트
+function typeTest(){
+    let name = '심원용';//문자열
+    let age = 20;//숫자
+    let height = 183.7;//숫자
+    let check = false;//논리
+    let food = ['치킨', '피자', '제육'];//배열
+    //객체
+    let user = {
+        myname : '심원용',
+        age : 20,
+        height : 183.7,
+        weight : 88.8,
+        food : ['치킨', '피자', '제육']
+    };
+    //함수
+    let plus = function(a,b){
+        return a+b;
+    }
+
+    console.log(typeof name);
+    console.log(typeof age);
+    console.log(typeof height);
+    console.log(typeof check);
+    console.log(typeof food);
+    console.log(typeof user);
+    console.log(typeof plus);
+
+}
+
+
+// 강제 형변환
+function castingTest(){
+
+    console.log("============== casting test ===============");
+
+    var result = 2 + '3';
+    console.log(result);
+
+    var result = 2 + Number('3');
+    console.log(result);
+
+    var result = String(2) + Number('3');
+    console.log(result);
+
+    var result = 2 + parseInt('3');
+    console.log(result);
+
+    var result = 2 + parseFloat('3');
+    console.log(result);
+
+}
+
+//for in test
+function forInTest(){
+
+    let arr = ['apple', 'banana', 'tomato'];
+    //for in
+    for(let i in arr){
+        console.log(i);
+        console.log(arr[i]);
+    }
+
+    console.log("============================");
+
+    //ES6 에 추가된 for문
+    for(let x of arr){
+        console.log(x);
+    }
+    
 
 
 }
