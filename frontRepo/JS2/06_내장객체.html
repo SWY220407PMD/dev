@@ -18,7 +18,56 @@
 
     <hr>
 
+    <h2>Number 객체</h2>
+    <p>
+        정수, 실수 저장하는 객체
+    </p>
 
+    <button id="btn2">실행 확인</button>
+
+    <script>
+        var result = Number(3.14);
+        var result = new Number(1.123123);
+    </script>
+
+    <hr>
+
+    <h2>String 객체</h2>
+    <p>
+        문자열을 저장하는 객체 <br>
+        HTML 요소와 관련된 여러 메소드 제공
+    </p>
+    <script>
+        var result = String(3.14);
+        var result = new String(1.123123);
+    </script>
+
+    <button id="btn3">실행 확인</button>
+
+    <hr>
+
+    <h2>Date 객체</h2>
+    <p>
+        날짜와 시간정보를 저장하는 객체
+    </p>
+    <button id="btn4">실행 확인</button>
+
+    <script>
+        var date1 = new Date();
+        var date2 = new Date(3000);//1970년 1월 1일 09시00분00초 기준 ms단위 시간
+        var date3 = new Date('2022/01/01/20:06:30');
+        var date4 = new Date('2022-01-01T10:06:30');
+        var date5 = new Date(2022, 11, 01, 20, 07, 30);
+        
+        
+
+        console.log(date1);
+        console.log(date2);
+        console.log(date3);
+        console.log(date4);
+        console.log(date5);
+        console.log(date5.getHours());
+    </script>
 
 
 

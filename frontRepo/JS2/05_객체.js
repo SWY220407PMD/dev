@@ -109,6 +109,40 @@ window.onload = () => {
     });//addEventListener
 
 
+    //생성자 함수
+    function Person(name, height, weigh){
+        //속성
+        this.name = name;
+        this.height = height;
+        this.weigh = weigh;
+        //this.thisVar = "디스의 변수에 넣은 값";
+        //var normalVar = '일반 변수에 넣은 값';
+        // this.getName = function(){
+        //     return this.name;
+        // }
+    }
+
+    Person.prototype.kh = '안녕';
+    Person.prototype.getName = function(){
+        return this.name;
+    }
+
+
+    const btn5 = document.getElementById('btn5');
+
+    btn5.addEventListener('click', function(){
+
+        result = new Person('심원용',183,88);
+        console.log(result);
+        console.log(result.getName());
+
+    });
+
+
+
+
+
+
 
 
 
