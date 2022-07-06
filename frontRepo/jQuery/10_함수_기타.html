@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>함수_기타</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <style>
+        .st-1{background-color: red;}
+        .st-2{background-color: blue;}
+        .st-3{background-color: green;}
+    </style>
+</head>
+<body>
+    <h1>함수_기타</h1>
+
+    <script>
+        $(function(){
+
+            const arr = ['a','b','c','d','e'];
+
+            // 1. for in
+            // for(let i in arr){
+            //     console.log(i + " ::: " + arr[i]);
+            // }
+
+            // 2. each (jQuery)
+            // $.each(arr, function(a,b){
+            //     console.log(a + " ::: " + b);
+            // })
+
+            // 3. each (jQuery)
+            // $(arr).each(function(a,b){
+            //     console.log(a + " ::: " + b);
+            // });
+
+            const obj = 
+            {
+                name : 'swy',
+                age : 20
+            };
+
+            // for(let i in obj){
+            //     console.log(i + " ::: " + obj[i]);
+            // }
+
+            // $.each(obj, function(a,b){
+            //     console.log(a + " ::: " + b);
+            // });
+
+        });
+    </script>
+
+    <hr>
+
+    <div id="area1">
+        <h1 class="test" id="abc">1</h1>
+        <h1>2</h1>
+        <h1>3</h1>
+    </div>
+
+    <script>
+
+
+        $(function(){
+
+            //#area1 안의 h1 태그들 가져와서, 각각 st-1, st-2, st-3 클래스 부여하기
+            
+            // 방법1
+            // const arr = $('#area1').children();
+
+            // arr.each(function(idx , elem){
+            //     // $(elem).addClass('st-' + (idx+1));
+            //     elem.className = elem.className + ' st-' + (idx+1);
+            // })
+
+            // 방법2
+            // for(let i = 0; i < $('#area1').children().length; i++){
+            //     $('#area1').children().eq(i).addClass('st-' + (i+1));
+            // }
+
+        });
+    </script>
+
+
+    <h1>is함수</h1>
+
+    
+    <div class="isTest"></div>
+
+    <div class="isTest01"></div>
+    <div class="isTest02"></div>
+
+    <script>
+        // $(function(){
+        //     $('div').each(function(idx, elem){
+        //         console.log(elem);
+        //         if($(elem).is('.isTest')){
+        //             console.log("통과");
+        //         }
+        //     });
+        // });
+
+        // 현재 문서의 div 요소 중, 
+        // class 가 isTest01 또는 isTest02 에 해당하는 요소만 출력
+        $(function(){
+            $('div').each(function(idx, elem){
+                if( $(this).is('.isTest01') || $(elem).is('.isTest02')){
+                    console.log(this);
+                }
+            });
+        });
+
+
+    </script>
+
+
+
+</body>
+</html>

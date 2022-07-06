@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>이벤트(키보드)</title>
+</head>
+<body>
+    
+    <h1>이벤트(키보드)</h1>
+
+    <!-- 
+        키보드 이벤트
+
+     -->
+
+     <input type="text" id="t1">
+     <span id="result"></span>
+
+     <script>
+        $(function(){
+            $('#t1').keyup(function(){
+                console.log('keyup ~~~~~ ');
+                const cnt = $('#t1').val().length
+                $('#result').text('글자수 : ' + cnt);
+            });
+
+            $('#t1').keydown(function(){
+                console.log('keydown ~~~~~ ');
+            });
+        })
+     </script>
+
+</body>
+</html>
