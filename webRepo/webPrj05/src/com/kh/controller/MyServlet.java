@@ -11,10 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/my")
 public class MyServlet extends HttpServlet{
+	
+	public MyServlet() {
+		System.out.println("마이서블릿 객체 생성됨 ~~~");
+	}
+	
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		System.out.println("this : " + this);
 		//설정
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=UTF-8");
